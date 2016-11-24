@@ -1,0 +1,139 @@
+#N canvas 177 186 808 616 10;
+#X declare -stdlib Hoa;
+#X obj 12 424 hoa-help;
+#X obj 12 402 misc/hoa.credits;
+#X obj 12 377 declare -stdlib Hoa;
+#X obj 5 8 cnv 15 250 20 empty empty hoa.2d.proc.vector.energy~ 4 10
+0 14 -233017 -66577 0;
+#X obj 455 69 sig~ 1;
+#X obj 564 67 *~ 6.28319;
+#X msg 346 380 \; pd dsp 1;
+#X msg 346 420 \; pd dsp 0;
+#X obj 564 45 phasor~ 0.1;
+#X obj 12 450 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 12 470 hoa.connect;
+#X obj 455 458 misc/hoa.number~;
+#X obj 620 458 misc/hoa.number~;
+#X text 460 478 abscissa;
+#X text 624 478 ordinate;
+#X text 5 73 with Gi the amplitude and Ui the direction of the loudspeaker
+i., f 68;
+#X obj 564 19 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 0 256;
+#X obj 455 525 misc/hoa.number~;
+#X obj 620 525 misc/hoa.number~;
+#X text 460 545 radius;
+#X text 624 545 azimuth;
+#X obj 7 504 misc/hoa.cite;
+#X text 5 58 E = ∑[i=1:N]Gi^2Ui/∑[i=1:N]Gi^2;
+#X text 5 103 According to M. A. Gerzon \, this vector gives the perceived
+direction of a sound source in the high frequencies (≈ > 700Hz).
+As the equation uses the square of the amplitude of the signals \,
+the polarity of the signals is ignored. Thus the equation gives the
+average direction of the incoming energy - in which direction the energy
+is concentred., f 68;
+#X msg 693 99 symbol inPhase;
+#X msg 693 119 symbol maxRe;
+#X msg 693 141 symbol basic;
+#X text 6 197 According to J. Daniel \, the perceived precision of
+the sound field is defined by the radius the energy vector (rE = |E|).
+If rE is equal to 1 \, this is the ideal circumstance of a plane wave
+and if rE is equal to 0 \, the sound field is omnidirectionnal., f
+68;
+#X text 6 267 So the energy vector can be used to characterized the
+rendering of the sound field in the high frequencies. It is an efficient
+tools to anticipate the efficiency of an optimization., f 68;
+#X text 5 31 The abstraction computes the energy vector of the sound
+field defined by, f 68;
+#X obj 455 94 hoa.2d.encoder~ 7, f 28;
+#X obj 455 147 hoa.2d.optim~ 7 maxRe, f 28;
+#X obj 455 169 hoa.2d.decoder~ 7 regular 16;
+#X obj 455 366 hoa.2d.process~ 16 hoa.2d.proc.vector.energy~ planewaves
+@angles 0 22.5 45 67.5 90 112.5 135 157.5 180 202.5 225 247.5 270 292.5
+315 337.5, f 28;
+#X obj 455 190 hoa.2d.meter~ @size 170 170 @fontname "Helvetica" @fontweight
+"normal" @fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)"
+@channels 16 @angles 0 22.5 45 67.5 90 112.5 135 157.5 180 202.5 225
+247.5 270 292.5 315 337.5 @offset 0 @rotation "anti-clockwise" @vectors
+"energy" @interval 50 @bgcolor 1 1 1 1 @bdcolor 0.7 0.7 0.7 1 @coldcolor
+0 0.6 0 0.8 @tepidcolor 0.6 0.73 0 0.8 @warmcolor 0.85 0.85 0 0.8 @hotcolor
+1 0.6 0 0.8 @overcolor 1 0 0 0.8 @energycolor 0 0 1 0.8 @velocitycolor
+1 0 0 0.8;
+#X obj 455 499 misc/hoa.cartopol~, f 28;
+#X connect 4 0 30 0;
+#X connect 5 0 30 1;
+#X connect 8 0 5 0;
+#X connect 9 0 10 0;
+#X connect 16 0 8 0;
+#X connect 24 0 31 14;
+#X connect 25 0 31 14;
+#X connect 26 0 31 14;
+#X connect 30 0 31 0;
+#X connect 30 1 31 1;
+#X connect 30 2 31 2;
+#X connect 30 3 31 3;
+#X connect 30 4 31 4;
+#X connect 30 5 31 5;
+#X connect 30 6 31 6;
+#X connect 30 7 31 7;
+#X connect 30 8 31 8;
+#X connect 30 9 31 9;
+#X connect 30 10 31 10;
+#X connect 30 11 31 11;
+#X connect 30 12 31 12;
+#X connect 30 13 31 13;
+#X connect 30 14 31 14;
+#X connect 31 0 32 0;
+#X connect 31 1 32 1;
+#X connect 31 2 32 2;
+#X connect 31 3 32 3;
+#X connect 31 4 32 4;
+#X connect 31 5 32 5;
+#X connect 31 6 32 6;
+#X connect 31 7 32 7;
+#X connect 31 8 32 8;
+#X connect 31 9 32 9;
+#X connect 31 10 32 10;
+#X connect 31 11 32 11;
+#X connect 31 12 32 12;
+#X connect 31 13 32 13;
+#X connect 31 14 32 14;
+#X connect 32 0 33 0;
+#X connect 32 0 34 0;
+#X connect 32 1 33 1;
+#X connect 32 1 34 1;
+#X connect 32 2 33 2;
+#X connect 32 2 34 2;
+#X connect 32 3 33 3;
+#X connect 32 3 34 3;
+#X connect 32 4 33 4;
+#X connect 32 4 34 4;
+#X connect 32 5 33 5;
+#X connect 32 5 34 5;
+#X connect 32 6 33 6;
+#X connect 32 6 34 6;
+#X connect 32 7 33 7;
+#X connect 32 7 34 7;
+#X connect 32 8 33 8;
+#X connect 32 8 34 8;
+#X connect 32 9 33 9;
+#X connect 32 9 34 9;
+#X connect 32 10 33 10;
+#X connect 32 10 34 10;
+#X connect 32 11 33 11;
+#X connect 32 11 34 11;
+#X connect 32 12 33 12;
+#X connect 32 12 34 12;
+#X connect 32 13 33 13;
+#X connect 32 13 34 13;
+#X connect 32 14 33 14;
+#X connect 32 14 34 14;
+#X connect 32 15 33 15;
+#X connect 32 15 34 15;
+#X connect 33 0 11 0;
+#X connect 33 0 35 0;
+#X connect 33 1 12 0;
+#X connect 33 1 35 1;
+#X connect 35 0 17 0;
+#X connect 35 1 18 0;
