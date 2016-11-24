@@ -52,7 +52,7 @@ field defined by, f 68;
 #X obj 455 366 hoa.2d.process~ 16 hoa.2d.proc.vector.energy~ planewaves
 @angles 0 22.5 45 67.5 90 112.5 135 157.5 180 202.5 225 247.5 270 292.5
 315 337.5, f 28;
-#X obj 455 190 hoa.2d.meter~ @size 170 170 @fontname "Helvetica" @fontweight
+#X obj 455 190 hoa.2d.meter~ @size 171 171 @fontname "Helvetica" @fontweight
 "normal" @fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)"
 @channels 16 @angles 0 22.5 45 67.5 90 112.5 135 157.5 180 202.5 225
 247.5 270 292.5 315 337.5 @offset 0 @rotation "anti-clockwise" @vectors
