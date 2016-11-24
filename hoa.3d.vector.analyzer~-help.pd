@@ -1,0 +1,174 @@
+#N canvas 131 111 848 541 10;
+#X declare -stdlib Hoa;
+#X obj 12 444 hoa-help;
+#X obj 12 422 misc/hoa.credits;
+#X obj 12 397 declare -stdlib Hoa;
+#X obj 5 8 cnv 15 250 20 empty empty hoa.3d.vector.analyzer~ 4 10 0
+14 -233017 -66577 0;
+#X obj 455 114 hoa.3d.encoder~ 3, f 37;
+#X obj 455 69 sig~ 1;
+#X obj 564 67 *~ 6.28319;
+#X msg 346 400 \; pd dsp 1;
+#X msg 346 440 \; pd dsp 0;
+#X obj 564 45 phasor~ 0.1;
+#X obj 455 189 hoa.3d.decoder~ 3 regular 20, f 37;
+#X obj 674 19 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 0.03 256;
+#X obj 455 217 hoa.3d.meter~ @size 225 112.5 @fontname "Helvetica"
+@fontweight "normal" @fontslant "roman" @fontsize 11 @receive "(null)"
+@send "(null)" @channels 20 @angles 180 69.1 159.1 0 90 20.9 135 35.3
+135 -35.3 180 -69.1 20.9 0 90 -20.9 45 35.3 45 -35.3 0 69.1 200.9 0
+270 20.9 225 35.3 225 -35.3 0 -69.1 339.1 0 270 -20.9 315 35.3 315
+-35.3 @offset 0 0 0 @rotation "anti-clockwise" @view "top-bottom" @vectors
+"energy" @interval 50 @bgcolor 1 1 1 1 @bdcolor 0.7 0.7 0.7 1 @coldcolor
+0 0.6 0 0.8 @tepidcolor 0.6 0.73 0 0.8 @warmcolor 0.85 0.85 0 0.8 @hotcolor
+1 0.6 0 0.8 @overcolor 1 0 0 0.8 @energycolor 0 0 1 0.8 @velocitycolor
+1 0 0 0.8;
+#X obj 455 336 hoa.3d.process~ 20 hoa.3d.proc.vector.energy~ planewaves
+@angles 180 69.1 159.1 0 90 20.9 135 35.3 135 -35.3 180 -69.1 20.9
+0 90 -20.9 45 35.3 45 -35.3 0 69.1 200.9 0 270 20.9 225 35.3 225 -35.3
+0 -69.1 339.1 0 270 -20.9 315 35.3 315 -35.3, f 37;
+#X obj 674 44 misc/hoa.cos.flip~ 0.03;
+#X obj 674 68 *~ 1.57079;
+#X obj 564 19 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 0.1 256;
+#X obj 11 474 misc/hoa.cite;
+#X msg 693 119 symbol inPhase;
+#X msg 693 139 symbol maxRe;
+#X obj 455 167 hoa.3d.optim~ 3 maxRe, f 37;
+#X msg 693 161 symbol basic;
+#X obj 455 439 s~ \$0-x;
+#X obj 564 439 s~ \$0-y;
+#X obj 674 439 s~ \$0-z;
+#X obj 574 89 s~ \$0-a;
+#X obj 684 89 s~ \$0-e;
+#X obj 13 232 misc/hoa.number~;
+#X obj 122 232 misc/hoa.number~;
+#X obj 232 232 misc/hoa.number~;
+#X obj 13 273 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 20.9001 256;
+#X text 70 273 %;
+#X obj 122 273 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 20.8614 256;
+#X text 179 273 %;
+#X obj 122 251 * 100;
+#X obj 232 273 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 0.471964 256;
+#X text 289 273 %;
+#X obj 232 251 * 31.8309;
+#X obj 13 251 * 100;
+#X text 12 292 Global precision deviation (distance), f 10;
+#X text 121 292 Resolution diminution (radius difference), f 12;
+#X text 231 292 Angular deviation (angular distance), f 10;
+#X obj 13 177 r~ \$0-x;
+#X obj 67 177 r~ \$0-y;
+#X obj 122 177 r~ \$0-z;
+#X obj 177 177 r~ \$0-a;
+#X obj 232 177 r~ \$0-e;
+#X obj 13 201 hoa.3d.vector.analyzer~, f 37;
+#X text 5 31 The abstraction analyzes a vector using an azimuth and
+an elevation as reference. It outputs the euclidean distance between
+the ideal position of the vector that matches to the global precision
+deviation, f 68;
+#X text 43 116 To do: ends this help;
+#X connect 4 0 20 0;
+#X connect 4 1 20 1;
+#X connect 4 2 20 2;
+#X connect 4 3 20 3;
+#X connect 4 4 20 4;
+#X connect 4 5 20 5;
+#X connect 4 6 20 6;
+#X connect 4 7 20 7;
+#X connect 4 8 20 8;
+#X connect 4 9 20 9;
+#X connect 4 10 20 10;
+#X connect 4 11 20 11;
+#X connect 4 12 20 12;
+#X connect 4 13 20 13;
+#X connect 4 14 20 14;
+#X connect 4 15 20 15;
+#X connect 5 0 4 0;
+#X connect 6 0 4 1;
+#X connect 6 0 25 0;
+#X connect 9 0 6 0;
+#X connect 10 0 12 0;
+#X connect 10 0 13 0;
+#X connect 10 1 12 1;
+#X connect 10 1 13 1;
+#X connect 10 2 12 2;
+#X connect 10 2 13 2;
+#X connect 10 3 12 3;
+#X connect 10 3 13 3;
+#X connect 10 4 12 4;
+#X connect 10 4 13 4;
+#X connect 10 5 12 5;
+#X connect 10 5 13 5;
+#X connect 10 6 12 6;
+#X connect 10 6 13 6;
+#X connect 10 7 12 7;
+#X connect 10 7 13 7;
+#X connect 10 8 12 8;
+#X connect 10 8 13 8;
+#X connect 10 9 12 9;
+#X connect 10 9 13 9;
+#X connect 10 10 12 10;
+#X connect 10 10 13 10;
+#X connect 10 11 12 11;
+#X connect 10 11 13 11;
+#X connect 10 12 12 12;
+#X connect 10 12 13 12;
+#X connect 10 13 12 13;
+#X connect 10 13 13 13;
+#X connect 10 14 12 14;
+#X connect 10 14 13 14;
+#X connect 10 15 12 15;
+#X connect 10 15 13 15;
+#X connect 10 16 12 16;
+#X connect 10 16 13 16;
+#X connect 10 17 12 17;
+#X connect 10 17 13 17;
+#X connect 10 18 12 18;
+#X connect 10 18 13 18;
+#X connect 10 19 12 19;
+#X connect 10 19 13 19;
+#X connect 11 0 14 0;
+#X connect 13 0 22 0;
+#X connect 13 1 23 0;
+#X connect 13 2 24 0;
+#X connect 14 0 15 0;
+#X connect 15 0 4 2;
+#X connect 15 0 26 0;
+#X connect 16 0 9 0;
+#X connect 18 0 20 15;
+#X connect 19 0 20 15;
+#X connect 20 0 10 0;
+#X connect 20 1 10 1;
+#X connect 20 2 10 2;
+#X connect 20 3 10 3;
+#X connect 20 4 10 4;
+#X connect 20 5 10 5;
+#X connect 20 6 10 6;
+#X connect 20 7 10 7;
+#X connect 20 8 10 8;
+#X connect 20 9 10 9;
+#X connect 20 10 10 10;
+#X connect 20 11 10 11;
+#X connect 20 12 10 12;
+#X connect 20 13 10 13;
+#X connect 20 14 10 14;
+#X connect 20 15 10 15;
+#X connect 21 0 20 15;
+#X connect 27 0 38 0;
+#X connect 28 0 34 0;
+#X connect 29 0 37 0;
+#X connect 34 0 32 0;
+#X connect 37 0 35 0;
+#X connect 38 0 30 0;
+#X connect 42 0 47 0;
+#X connect 43 0 47 1;
+#X connect 44 0 47 2;
+#X connect 45 0 47 3;
+#X connect 46 0 47 4;
+#X connect 47 0 27 0;
+#X connect 47 1 28 0;
+#X connect 47 2 29 0;

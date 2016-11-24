@@ -1,4 +1,4 @@
-#N canvas 732 413 462 415 10;
+#N canvas 468 292 478 437 10;
 #X declare -stdlib Hoa;
 #X obj 8 336 hoa-help;
 #X obj 8 314 misc/hoa.credits;
