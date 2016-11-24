@@ -1,0 +1,37 @@
+#N canvas 732 413 462 415 10;
+#X declare -stdlib Hoa;
+#X obj 8 336 hoa-help;
+#X obj 8 314 misc/hoa.credits;
+#X obj 8 289 declare -stdlib Hoa;
+#X obj 5 8 cnv 15 250 20 empty empty hoa.3d.distance.angular~ 4 10
+0 14 -233017 -66577 0;
+#X obj 7 360 misc/hoa.cite;
+#X obj 8 266 misc/hoa.number~;
+#X text 64 265 d;
+#X obj 8 187 *~ 6.28319;
+#X text 15 211 θ1;
+#X text 198 223 θ2;
+#X obj 8 161 phasor~ 0.01;
+#X obj 190 204 sig~ 1.57079;
+#X obj 8 244 hoa.3d.distance.angular~, f 46;
+#X text 5 31 The abstraction computes great-circle distance or orthodromic
+\, the smallest distance between two points on a sphere \, measured
+along the surface of a sphere using the equation, f 44;
+#X text 7 106 d = 2asin(√ (sin((θ1-θ2)/2)^2 * cos(φ1) * cos(φ2)
++ sin((φ1-φ2)/2)^2)), f 71;
+#X text 5 134 First azimuth;
+#X text 186 182 Second azimuth;
+#X text 280 182 Second elevation;
+#X obj 281 204 sig~ -0.78539;
+#X text 289 223 φ2;
+#X obj 99 161 misc/hoa.cos.flip~;
+#X text 97 134 First elevation;
+#X text 107 211 φ1;
+#X obj 99 187 *~ 1.57079;
+#X connect 7 0 12 0;
+#X connect 10 0 7 0;
+#X connect 11 0 12 2;
+#X connect 12 0 5 0;
+#X connect 18 0 12 3;
+#X connect 20 0 23 0;
+#X connect 23 0 12 1;
