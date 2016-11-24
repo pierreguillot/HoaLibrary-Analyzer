@@ -6,10 +6,10 @@
 #X obj 5 8 cnv 15 250 20 empty empty hoa.2d.proc.vector.energy~ 4 10
 0 14 -233017 -66577 0;
 #X obj 455 69 sig~ 1;
-#X obj 564 67 *~ 6.28319;
+#X obj 620 67 *~ 6.28319;
 #X msg 346 380 \; pd dsp 1;
 #X msg 346 420 \; pd dsp 0;
-#X obj 564 45 phasor~ 0.1;
+#X obj 620 45 phasor~ 0.1;
 #X obj 12 450 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
 #X obj 12 470 hoa.connect;
@@ -19,7 +19,7 @@
 #X text 624 478 ordinate;
 #X text 5 73 with Gi the amplitude and Ui the direction of the loudspeaker
 i., f 68;
-#X obj 564 19 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+#X obj 620 19 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
 -262144 -1 -1 0 256;
 #X obj 455 525 misc/hoa.number~;
 #X obj 620 525 misc/hoa.number~;
