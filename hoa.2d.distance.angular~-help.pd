@@ -1,0 +1,25 @@
+#N canvas 642 254 328 365 10;
+#X declare -stdlib Hoa;
+#X obj 18 263 hoa-help;
+#X obj 18 241 misc/hoa.credits;
+#X obj 18 216 declare -stdlib Hoa;
+#X obj 5 8 cnv 15 250 20 empty empty hoa.2d.distance.angular~ 4 10
+0 14 -233017 -66577 0;
+#X obj 17 287 misc/hoa.cite;
+#X obj 18 193 misc/hoa.number~;
+#X text 74 192 d;
+#X obj 18 171 hoa.2d.distance.angular~, f 25;
+#X obj 18 127 *~ 6.28319;
+#X text 15 74 First angle, f 12;
+#X text 25 151 θ1;
+#X text 173 151 θ2;
+#X text 151 104 Second angle, f 14;
+#X text 5 31 The abstraction computes the angular distance (the smallest
+difference) between two angles using the equation d = 2asin(|sin((θ1-θ2)/2)|).
+, f 47;
+#X obj 18 101 phasor~ 0.01;
+#X obj 165 132 sig~ 1.57079;
+#X connect 7 0 5 0;
+#X connect 8 0 7 0;
+#X connect 14 0 8 0;
+#X connect 15 0 7 1;
