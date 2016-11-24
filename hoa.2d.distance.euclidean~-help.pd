@@ -1,14 +1,11 @@
-#N canvas 177 186 442 467 10;
+#N canvas 177 186 344 387 10;
 #X declare -stdlib Hoa;
 #X obj 20 294 hoa-help;
 #X obj 20 272 misc/hoa.credits;
 #X obj 20 247 declare -stdlib Hoa;
 #X obj 5 8 cnv 15 250 20 empty empty hoa.2d.distance.euclidean~ 4 10
 0 14 -233017 -66577 0;
-#X obj 20 320 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
-#X obj 20 340 hoa.connect;
-#X obj 15 374 misc/hoa.cite;
+#X obj 15 321 misc/hoa.cite;
 #X obj 18 223 misc/hoa.number~;
 #X obj 18 121 osc~ 0.1;
 #X obj 75 142 osc~ 0.13;
@@ -22,11 +19,10 @@
 #X text 196 161 y2;
 #X text 74 222 d;
 #X text 5 31 The abstraction computes the euclidean distance between
-two points using the equation d = √((x1-x2)*(y1-y2))., f 68;
+two points using the equation d = √((x1-x2)*(y1-y2))., f 42;
 #X obj 18 201 hoa.2d.distance.euclidean~, f 29;
-#X connect 4 0 5 0;
-#X connect 8 0 20 0;
-#X connect 9 0 20 1;
-#X connect 10 0 20 2;
-#X connect 11 0 20 3;
-#X connect 20 0 7 0;
+#X connect 6 0 18 0;
+#X connect 7 0 18 1;
+#X connect 8 0 18 2;
+#X connect 9 0 18 3;
+#X connect 18 0 5 0;
