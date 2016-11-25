@@ -1,10 +1,10 @@
 #N canvas 143 378 188 182 10;
 #X obj 12 14 inlet;
-#X obj 62 66 f \$1;
-#X obj 62 88 sel \$2;
-#X obj 95 66 + \$3;
-#X obj 62 110 f \$1;
-#X obj 95 140 outlet;
+#X obj 75 66 f \$1;
+#X obj 75 88 sel \$2;
+#X obj 108 66 + \$3;
+#X obj 75 110 f \$1;
+#X obj 108 140 outlet;
 #X obj 12 36 route reset;
 #X obj 12 80 f \$1;
 #X obj 12 58 bang;
